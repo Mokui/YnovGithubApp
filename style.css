@@ -1,3 +1,7 @@
-.contenter{
-    display:block !important; 
+.tab-pane{
+    margin: 1%;
+}
+
+div.pageload{
+    background: antiquewhite;
 }
