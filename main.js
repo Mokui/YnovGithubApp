@@ -16,16 +16,13 @@ var app = new Vue({
       
     })
   },
-  mounted: {
-
-  },
   methods: {
     getSelectedUser : function(){
       vm = this;
       console.log("User: "+vm.userSelected);
       
       axios
-        .get('https://api.github.com/users/'+vm.userSelected)
+        .get('https://api.github.com/repos/'+vm.userSelected+'/github-ynov-vue/commits')
         .then(response => (vm.info = response))
     }
   },
