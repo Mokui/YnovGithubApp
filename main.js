@@ -7,6 +7,7 @@ var app = new Vue({
     infos: [],
     commitsFound: '',
     projectName: 'github-ynov-vue' ,
+    datesCommits : []
   },
   created: function()
   {
@@ -33,7 +34,24 @@ var app = new Vue({
       axios
         .get(`https://api.github.com/repos/${vm.userSelected}/${vm.projectName}/commits`)
         .then(response => (vm.infos = response.data));
-    }
+    },
+    getSelectedDate : function () {
+      vm = this;
+      // console.log("Repo: "+ vm.projectName);
+      let myListDate = [];      
+      axios
+        .get(`https://api.github.com/repos/${vm.userSelected}/${vm.projectName}/commits`)
+        .then(response => (vm.infos = response.data));
+
+      for (const commit in vm.infos) {
+        for (const author in commit) {
+          myListDate += author.date;
+        }
+      }
+console.log(myListDate);
+
+      vm.datesCommits = myListDate;
+    },
   },
   computed: {
     

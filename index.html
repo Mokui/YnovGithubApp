@@ -52,7 +52,7 @@
                 </div>
                 <div class="tab-pane fade" id="periode" role="tabpanel" aria-labelledby="periode-tab">
                     <label>Selectionnez une date</label>
-                    <input data-date-format="dd/mm/yyyy" id="datepicker" data-provide="datepicker"/>
+                    <input data-date-format="dd/mm/yyyy" id="datepicker" @input="getSelectedDate" data-provide="datepicker"/>
                 </div>
                 <div class="tab-pane fade" id="compte" role="tabpanel" aria-labelledby="compte-tab">
                     <label>Choisir un utilisateur</label>
@@ -66,13 +66,8 @@
         </div>
 
         <div v-for="commits, index in infos" class="container-fluid pageload border-bottom border-primary">
-            <p class="sha">{{index+1}} - {{commits.sha}} - </p>
-            <div v-for="commit in commits">
-                {{commit.message}}
-                {{commit.author}}
-            </div>
-            <!-- <p v-for="author in commits.commit">{{author.date}}</p>
-         --></div>
+            <p class="sha">{{index+1}} - {{commits.sha}} - {{commits.commit.message}} - {{commits.commit.author.date}}</p>
+        </div>
     </div>
 
 </body>
