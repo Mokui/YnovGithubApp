@@ -3,5 +3,18 @@
 }
 
 div.pageload{
-    background: antiquewhite;
+    background: #ffffff;
+}
+
+div.pageload p, div.pageload div p{
+    margin-top : 1rem;
+    display: inline-block;
+}
+
+div.pageload p.sha{
+    display: flex;
+}
+
+div.pageload p:empty{
+    display: none;
 }
