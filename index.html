@@ -48,7 +48,7 @@
             <div class="tab-content" id="myTabContent">
                 <div class="tab-pane fade show active" id="projet" role="tabpanel" aria-labelledby="projet-tab">
                     <label>Entrez le nom du projet</label>
-                    <input id="projectpicker" width="300"/>
+                    <input id="projectpicker" width="300" v-model="projectName" @input="getSelectedProject"/>
                 </div>
                 <div class="tab-pane fade" id="periode" role="tabpanel" aria-labelledby="periode-tab">
                     <label>Selectionnez une date</label>
@@ -65,14 +65,14 @@
             </div>
         </div>
 
-        <div v-for="commits in infos" class="container-fluid pageload border-bottom border-primary">
-            <p class="sha"> - {{commits.sha}} - </p>
+        <div v-for="commits, index in infos" class="container-fluid pageload border-bottom border-primary">
+            <p class="sha">{{index+1}} - {{commits.sha}} - </p>
             <div v-for="commit in commits">
                 {{commit.message}}
                 {{commit.author}}
             </div>
-            <p v-for="author in commits.commit">{{author.date}}</p>
-        </div>
+            <!-- <p v-for="author in commits.commit">{{author.date}}</p>
+         --></div>
     </div>
 
 </body>
