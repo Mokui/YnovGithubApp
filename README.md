@@ -5,3 +5,7 @@ Show different github repo
 ```
 $ npm install
 ```
+
+## Launching
+
+SImply launch the index.html page (make sure you got an internet access)
