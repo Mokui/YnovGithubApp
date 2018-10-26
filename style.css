@@ -18,3 +18,11 @@ div.pageload p.sha{
 div.pageload p:empty{
     display: none;
 }
+
+.mydatepick {
+    display: inline-flex;
+}
+
+.col-form-label{
+    margin-left:2%;
+}

@@ -47,15 +47,17 @@
             </nav>
             <div class="tab-content" id="myTabContent">
                 <div class="tab-pane fade show active" id="projet" role="tabpanel" aria-labelledby="projet-tab">
-                    <label>Entrez le nom du projet</label>
+                    <label for="projectpicker">Entrez le nom du projet</label>
                     <input id="projectpicker" width="300" v-model="projectName" @input="getSelectedProject"/>
                 </div>
-                <div class="tab-pane fade" id="periode" role="tabpanel" aria-labelledby="periode-tab">
-                    <label>Selectionnez une date</label>
-                    <input data-date-format="dd/mm/yyyy" id="datepicker" @input="getSelectedDate" data-provide="datepicker"/>
+                <div class="tab-pane fade form-group row" id="periode" role="tabpanel" aria-labelledby="periode-tab">
+                    <label for="example-date-input" class="col-form-label">Veuillez selectionner une date: </label>
+                    <div class="col-2 mydatepick">
+                        <input class="form-control" type="date" value="2018-10-19" id="example-date-input" v-model="dateCommits"  @input="getSelectedDate">
+                    </div>
                 </div>
                 <div class="tab-pane fade" id="compte" role="tabpanel" aria-labelledby="compte-tab">
-                    <label>Choisir un utilisateur</label>
+                    <label for="comptepanel">Choisir un utilisateur</label>
                     <select id="comptepanel" v-model="userSelected" @change="getSelectedUser">
                         <option v-for="user in users" v-bind:value="user.username">
                             <p>{{user.username}} ({{user.prenom}} {{user.nom}})</p>
@@ -72,16 +74,6 @@
 
 </body>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js"></script>
-<script type="text/javascript">
-    $('#datepicker').datepicker({
-        weekStart: 1,
-        daysOfWeekHighlighted: "6,0",
-        autoclose: true,
-        todayHighlight: true,
-    });
-    $('#datepicker').datepicker("setDate", new Date());
-</script>
 <script src="main.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
     crossorigin="anonymous"></script>
