@@ -26,3 +26,12 @@ div.pageload p:empty{
 .col-form-label{
     margin-left:2%;
 }
+
+.nav-item{
+    text-align: center;
+}
+
+.labelpick
+{
+    max-width: 100% !important;
+}

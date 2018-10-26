@@ -37,11 +37,11 @@
         <div class="contenter">
             <nav>
                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                    <a class="nav-item nav-link active" id="projet-tab" data-toggle="tab" href="#projet" role="tab"
+                    <a class="col-sm-4 nav-item nav-link active" id="projet-tab" data-toggle="tab" href="#projet" role="tab"
                         aria-controls="projet" aria-selected="true">Choix projet</a>
-                    <a class="nav-item nav-link" id="periode-tab" data-toggle="tab" href="#periode" role="tab"
+                    <a class="col-sm-4 nav-item nav-link" id="periode-tab" data-toggle="tab" href="#periode" role="tab"
                         aria-controls="periodec" aria-selected="false">Choix période</a>
-                    <a class="nav-item nav-link" id="compte-tab" data-toggle="tab" href="#compte" role="tab"
+                    <a class="col-sm-4 nav-item nav-link" id="compte-tab" data-toggle="tab" href="#compte" role="tab"
                         aria-controls="compte" aria-selected="false">Choix compte</a>
                 </div>
             </nav>
@@ -51,8 +51,8 @@
                     <input id="projectpicker" width="300" v-model="projectName" @input="getSelectedProject"/>
                 </div>
                 <div class="tab-pane fade form-group row" id="periode" role="tabpanel" aria-labelledby="periode-tab">
-                    <label for="example-date-input" class="col-form-label">Veuillez selectionner une date: </label>
-                    <div class="col-2 mydatepick">
+                    <label for="example-date-input" class="col-sm-2 labelpick col-form-label">Veuillez selectionner une date: </label>
+                    <div class="col-sm-10 mydatepick">
                         <input class="form-control" type="date" value="2018-10-19" id="example-date-input" v-model="dateCommits"  @input="getSelectedDate">
                     </div>
                 </div>
