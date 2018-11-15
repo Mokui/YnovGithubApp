@@ -35,3 +35,7 @@ div.pageload p:empty{
 {
     max-width: 100% !important;
 }
+
+li{
+    margin-bottom: 1%;
+}

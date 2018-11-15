@@ -66,10 +66,11 @@
                 </div>
             </div>
         </div>
-
-        <div v-for="commits, index in infos" class="container-fluid pageload border-bottom border-primary">
-            <p class="sha">{{index+1}} - {{commits.sha}} - {{commits.commit.message}} - {{commits.commit.author.date}}</p>
-        </div>
+        <ul>
+            <li v-for="commits, index in infos" class="container-fluid pageload border-bottom border-primary">
+                <span class="sha">{{index+1}} - {{commits.sha}} - {{commits.commit.message}} - {{commits.commit.author.date}}</span>
+            </li>
+        </ul>
     </div>
 
 </body>
